@@ -43,7 +43,7 @@ namespace ASmarty.Testing.Tools
             var inlineFunctions = new IInlineFunction[] { new LDelim() };
             var expressionFunctions = new IExpressionFunction[] { new If() };
 
-            var functions = new ASmartyFunctions(blockFunctions, inlineFunctions, expressionFunctions, new List<IVariableModifier>());
+            var functions = new Functions(blockFunctions, inlineFunctions, expressionFunctions, new List<IVariableModifier>());
 
             parser = new Parser(0, tokenizer, functions);
         }
