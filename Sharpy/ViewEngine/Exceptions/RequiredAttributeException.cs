@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Sharpy.ViewEngine.Exceptions
+namespace ASmarty.ViewEngine.Exceptions
 {
     [Serializable]
     public class RequiredAttributeException : Exception

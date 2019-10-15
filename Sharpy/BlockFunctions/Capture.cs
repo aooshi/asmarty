@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using Sharpy.ViewEngine;
-using Sharpy.Extensions;
+using ASmarty.ViewEngine;
+using ASmarty.Extensions;
 
-namespace Sharpy.BlockFunctions
+namespace ASmarty.BlockFunctions
 {
     [Export(typeof(IBlockFunction))]
     public class Capture : IBlockFunction

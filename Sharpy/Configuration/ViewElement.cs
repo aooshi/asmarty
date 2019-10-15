@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace Sharpy.Configuration
+namespace ASmarty.Configuration
 {
     public class ViewElement : ConfigurationElement
     {

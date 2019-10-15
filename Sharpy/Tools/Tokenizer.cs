@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace Sharpy.Tools
+namespace ASmarty.Tools
 {
     internal class Tokenizer
     {

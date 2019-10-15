@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 using NUnit.Framework;
-using Sharpy.BlockFunctions;
-using Sharpy.ExpressionFunctions;
-using Sharpy.InlineFunctions;
-using Sharpy.Tools;
-using Sharpy.Tools.ParserNodes;
-using Sharpy.ViewEngine;
+using ASmarty.BlockFunctions;
+using ASmarty.ExpressionFunctions;
+using ASmarty.InlineFunctions;
+using ASmarty.Tools;
+using ASmarty.Tools.ParserNodes;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.Testing.Tools
+namespace ASmarty.Testing.Tools
 {
     [TestFixture]
     public class ParserFixture
@@ -33,7 +33,7 @@ namespace Sharpy.Testing.Tools
                 </body>
             </html>";
 
-        private Parser parser;
+        private Parser parser; 
 
         [SetUp]
         public void Setup()
@@ -43,7 +43,7 @@ namespace Sharpy.Testing.Tools
             var inlineFunctions = new IInlineFunction[] { new LDelim() };
             var expressionFunctions = new IExpressionFunction[] { new If() };
 
-            var functions = new SharpyFunctions(blockFunctions, inlineFunctions, expressionFunctions, new List<IVariableModifier>());
+            var functions = new ASmartyFunctions(blockFunctions, inlineFunctions, expressionFunctions, new List<IVariableModifier>());
 
             parser = new Parser(0, tokenizer, functions);
         }

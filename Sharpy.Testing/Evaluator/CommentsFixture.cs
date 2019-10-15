@@ -1,13 +1,13 @@
 ﻿using NUnit.Framework;
 
-namespace Sharpy.Testing.Evaluator
+namespace ASmarty.Testing.Evaluator
 {
     public class CommentsFixture : EvaluatorFixture
     {
         [Test]
         public void ShouldNotDisplayCommentsInOutput()
         {
-            const string input = @"{* I'm a Sharpy comment, I don't exist in the compiled output *}";
+            const string input = @"{* I'm a ASmarty comment, I don't exist in the compiled output *}";
 
             var result = functionEvaluator.Evaluate(input);
 
@@ -17,7 +17,7 @@ namespace Sharpy.Testing.Evaluator
         [Test]
         public void ShouldNotDisplayMultiLineCommentsInOutput()
         {
-            const string input = @"{* this multiline sharpy
+            const string input = @"{* this multiline ASmarty
                                       comment is
                                       not sent to the browser *}";
 

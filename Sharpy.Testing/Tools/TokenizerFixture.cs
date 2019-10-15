@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 using NUnit.Framework;
-using Sharpy.Tools;
+using ASmarty.Tools;
 
-namespace Sharpy.Testing.Tools
+namespace ASmarty.Testing.Tools
 {
     [TestFixture]
     public class TokenizerFixture

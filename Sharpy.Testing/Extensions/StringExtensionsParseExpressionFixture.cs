@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using Sharpy.Extensions;
-using Sharpy.ViewEngine;
+using ASmarty.Extensions;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.Testing.Extensions
+namespace ASmarty.Testing.Extensions
 {
     [TestFixture]
     public class StringExtensionsParseExpressionFixture

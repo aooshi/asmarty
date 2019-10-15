@@ -1,7 +1,7 @@
 using System.IO;
 using System.Web.Mvc;
 
-namespace Sharpy.Testing.Fakes
+namespace ASmarty.Testing.Fakes
 {
     public class FakeView : IView
     {

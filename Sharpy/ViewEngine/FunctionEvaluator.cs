@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Sharpy.Tools.ParserNodes;
+using ASmarty.Tools.ParserNodes;
 
-namespace Sharpy.ViewEngine
+namespace ASmarty.ViewEngine
 {
     internal class FunctionEvaluator : IFunctionEvaluator
     {

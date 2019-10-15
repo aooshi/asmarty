@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.Composition;
 using System.Text.RegularExpressions;
-using Sharpy.ViewEngine;
-using Sharpy.ViewEngine.Exceptions;
+using ASmarty.ViewEngine;
+using ASmarty.ViewEngine.Exceptions;
 
-namespace Sharpy.VariableModifiers
+namespace ASmarty.VariableModifiers
 {
     [Export(typeof(IVariableModifier))]
     public class RegexReplace : IVariableModifier

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace Sharpy.Testing.Fakes
+namespace ASmarty.Testing.Fakes
 {
     internal class FakeViewDataContainer : IViewDataContainer
     {

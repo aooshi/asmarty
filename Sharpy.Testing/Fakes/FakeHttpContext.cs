@@ -3,7 +3,7 @@ using System.Security.Principal;
 using System.Web;
 using System.Web.SessionState;
 
-namespace Sharpy.Testing.Fakes
+namespace ASmarty.Testing.Fakes
 {
     public class FakeHttpContext : HttpContextBase
     {

@@ -2,22 +2,22 @@
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
-using Sharpy.Extensions;
-using Sharpy.Tools;
-using Sharpy.Tools.ParserNodes;
+using ASmarty.Extensions;
+using ASmarty.Tools;
+using ASmarty.Tools.ParserNodes;
 
-namespace Sharpy.ViewEngine
+namespace ASmarty.ViewEngine
 {
-    internal class SharpyView : IView
+    internal class ASmartyView : IView
     {
         private static readonly IDictionary<string, IEnumerable<IParserNode>> cachedViews = new Dictionary<string, IEnumerable<IParserNode>>();
 
         private readonly string viewPath;
         private readonly string masterPath;
-        private readonly SharpyFunctions functions;
+        private readonly ASmartyFunctions functions;
         private readonly bool cache;
 
-        public SharpyView(string viewPath, string masterPath, SharpyFunctions functions, bool cache)
+        public ASmartyView(string viewPath, string masterPath, ASmartyFunctions functions, bool cache)
         {
             this.viewPath = viewPath;
             this.masterPath = masterPath;

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpy", "Sharpy\Sharpy.csproj", "{3EC1AAFF-BFB0-4F50-AAA9-CD85AE0A6C14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASmarty", "Sharpy\ASmarty.csproj", "{3EC1AAFF-BFB0-4F50-AAA9-CD85AE0A6C14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharpy.Testing", "Sharpy.Testing\Sharpy.Testing.csproj", "{F48ABCA7-9031-4FF8-A3A6-4DA7B81D008E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASmarty.Testing", "Sharpy.Testing\ASmarty.Testing.csproj", "{F48ABCA7-9031-4FF8-A3A6-4DA7B81D008E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

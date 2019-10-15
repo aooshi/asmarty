@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Sharpy.ViewEngine;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.Tools.ParserNodes
+namespace ASmarty.Tools.ParserNodes
 {
     internal class InlineFunctionNode : IParserNode
     {

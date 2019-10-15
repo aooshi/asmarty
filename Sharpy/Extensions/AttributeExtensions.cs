@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Sharpy.ViewEngine.Exceptions;
+using ASmarty.ViewEngine.Exceptions;
 
-namespace Sharpy.Extensions
+namespace ASmarty.Extensions
 {
     public static class AttributeExtensions
     {

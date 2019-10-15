@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace Sharpy.Testing.Evaluator.BlockFunctions
+namespace ASmarty.Testing.Evaluator.BlockFunctions
 {
     public class ForEachFixture : EvaluatorFixture
     {

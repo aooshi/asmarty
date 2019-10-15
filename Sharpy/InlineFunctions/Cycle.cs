@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using Sharpy.Extensions;
-using Sharpy.ViewEngine;
+using ASmarty.Extensions;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.InlineFunctions
+namespace ASmarty.InlineFunctions
 {
     [Export(typeof(IInlineFunction))]
     public class Cycle : IInlineFunction

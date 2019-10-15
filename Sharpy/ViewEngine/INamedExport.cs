@@ -1,4 +1,4 @@
-﻿namespace Sharpy.ViewEngine
+﻿namespace ASmarty.ViewEngine
 {
     public interface INamedExport
     {

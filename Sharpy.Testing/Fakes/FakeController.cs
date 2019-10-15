@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Sharpy.Testing.Fakes
+namespace ASmarty.Testing.Fakes
 {
     public class FakeController : ControllerBase
     {

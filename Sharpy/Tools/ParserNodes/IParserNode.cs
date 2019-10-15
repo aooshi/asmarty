@@ -1,4 +1,4 @@
-﻿namespace Sharpy.Tools.ParserNodes
+﻿namespace ASmarty.Tools.ParserNodes
 {
     internal interface IParserNode
     {

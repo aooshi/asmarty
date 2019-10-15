@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using NUnit.Framework;
-using Sharpy.BlockFunctions;
-using Sharpy.ExpressionFunctions;
-using Sharpy.InlineFunctions;
-using Sharpy.VariableModifiers;
-using Sharpy.ViewEngine;
-using Strip=Sharpy.BlockFunctions.Strip;
+using ASmarty.BlockFunctions;
+using ASmarty.ExpressionFunctions;
+using ASmarty.InlineFunctions;
+using ASmarty.VariableModifiers;
+using ASmarty.ViewEngine;
+using Strip=ASmarty.BlockFunctions.Strip;
 
-namespace Sharpy.Testing.Evaluator
+namespace ASmarty.Testing.Evaluator
 {
     [TestFixture]
     public abstract class EvaluatorFixture
@@ -24,8 +24,8 @@ namespace Sharpy.Testing.Evaluator
             var blockFunctions = new IBlockFunction[] { new ForEach(), new Literal(), new Strip(), new Capture() };
             var inlineFunctions = new IInlineFunction[] { new LDelim(), new RDelim(), new Assign(), new Cycle() };
             var expressionFunctions = new IExpressionFunction[] { new If() };
-            var variableModifiers = new IVariableModifier[] { new Capitalize(), new Cat(), new CountCharacters(), new CountParagraphs(), new CountSentences(), new CountWords(), new DateFormat(), new Default(), new Lower(), new NewLineToBreak(), new RegexReplace(), new Replace(), new Spacify(), new StringFormat(), new Sharpy.VariableModifiers.Strip(), new StripTags(), new Truncate(), new Upper(), new WordWrap(), new Indent() };
-            var functions = new SharpyFunctions(blockFunctions, inlineFunctions, expressionFunctions, variableModifiers);
+            var variableModifiers = new IVariableModifier[] { new Capitalize(), new Cat(), new CountCharacters(), new CountParagraphs(), new CountSentences(), new CountWords(), new DateFormat(), new Default(), new Lower(), new NewLineToBreak(), new RegexReplace(), new Replace(), new Spacify(), new StringFormat(), new ASmarty.VariableModifiers.Strip(), new StripTags(), new Truncate(), new Upper(), new WordWrap(), new Indent() };
+            var functions = new ASmartyFunctions(blockFunctions, inlineFunctions, expressionFunctions, variableModifiers);
 
             viewData = new Dictionary<string, object>();
             functionData = new Dictionary<string, object>();

@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using Sharpy.Tools.ParserNodes;
-using Sharpy.ViewEngine;
-using Sharpy.ViewEngine.Exceptions;
+using ASmarty.Tools.ParserNodes;
+using ASmarty.ViewEngine;
+using ASmarty.ViewEngine.Exceptions;
 
-namespace Sharpy.Tools
+namespace ASmarty.Tools
 {
     internal class Parser
     {
         private int currentNodeId;
         private readonly Tokenizer tokenizer;
-        private readonly SharpyFunctions functions;
+        private readonly ASmartyFunctions functions;
         private Token currentToken;
         private const string master = "master";
 
-        public Parser(int currentNodeId, Tokenizer tokenizer, SharpyFunctions functions)
+        public Parser(int currentNodeId, Tokenizer tokenizer, ASmartyFunctions functions)
         {
             this.currentNodeId = currentNodeId;
             this.tokenizer = tokenizer;

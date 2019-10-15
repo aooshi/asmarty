@@ -8,8 +8,8 @@
     <ProjectGuid>{F48ABCA7-9031-4FF8-A3A6-4DA7B81D008E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sharpy.Testing</RootNamespace>
-    <AssemblyName>Sharpy.Testing</AssemblyName>
+    <RootNamespace>ASmarty.Testing</RootNamespace>
+    <AssemblyName>ASmarty.Testing</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -123,9 +123,9 @@
     <Compile Include="VariableModifiers\EscapeFixture.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sharpy\Sharpy.csproj">
+    <ProjectReference Include="..\Sharpy\ASmarty.csproj">
       <Project>{3ec1aaff-bfb0-4f50-aaa9-cd85ae0a6c14}</Project>
-      <Name>Sharpy</Name>
+      <Name>ASmarty</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

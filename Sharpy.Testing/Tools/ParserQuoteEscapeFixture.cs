@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using NUnit.Framework;
-using Sharpy.Tools;
-using Sharpy.Tools.ParserNodes;
-using Sharpy.ViewEngine;
+using ASmarty.Tools;
+using ASmarty.Tools.ParserNodes;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.Testing.Tools
+namespace ASmarty.Testing.Tools
 {
     [TestFixture]
     public class ParserQuoteEscapeFixture
@@ -15,7 +15,7 @@ namespace Sharpy.Testing.Tools
         {
             const string input = "{'bla bla \"bla\"'}";
 
-            var functions = new SharpyFunctions(new List<IBlockFunction>(), new List<IInlineFunction>(), new List<IExpressionFunction>(), new List<IVariableModifier>());
+            var functions = new ASmartyFunctions(new List<IBlockFunction>(), new List<IInlineFunction>(), new List<IExpressionFunction>(), new List<IVariableModifier>());
 
             ExpressionNode node;
             using (var stringReader = new StringReader(input))
@@ -34,7 +34,7 @@ namespace Sharpy.Testing.Tools
         {
             const string input = "{'bla bla \\'bla\\''}";
 
-            var functions = new SharpyFunctions(new List<IBlockFunction>(), new List<IInlineFunction>(), new List<IExpressionFunction>(), new List<IVariableModifier>());
+            var functions = new ASmartyFunctions(new List<IBlockFunction>(), new List<IInlineFunction>(), new List<IExpressionFunction>(), new List<IVariableModifier>());
 
             ExpressionNode node;
             using (var stringReader = new StringReader(input))

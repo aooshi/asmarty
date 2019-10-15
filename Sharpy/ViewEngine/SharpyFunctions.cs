@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 
-namespace Sharpy.ViewEngine
+namespace ASmarty.ViewEngine
 {
-    internal class SharpyFunctions
+    internal class ASmartyFunctions
     {
         internal IDictionary<string, IBlockFunction> BlockFunctions { get; private set; }
         internal IDictionary<string, IInlineFunction> InlineFunctions { get; private set; }
         internal IDictionary<string, IExpressionFunction> ExpressionFunctions { get; private set; }
         internal IDictionary<string, IVariableModifier> VariableModifiers { get; private set; }
 
-        public SharpyFunctions(IEnumerable<IBlockFunction> blockFunctions, IEnumerable<IInlineFunction> inlineFunctions, IEnumerable<IExpressionFunction> expressionFunctions, IEnumerable<IVariableModifier> variableModifiers)
+        public ASmartyFunctions(IEnumerable<IBlockFunction> blockFunctions, IEnumerable<IInlineFunction> inlineFunctions, IEnumerable<IExpressionFunction> expressionFunctions, IEnumerable<IVariableModifier> variableModifiers)
         {
             BlockFunctions = CreateDictionary(blockFunctions);
             InlineFunctions = CreateDictionary(inlineFunctions);

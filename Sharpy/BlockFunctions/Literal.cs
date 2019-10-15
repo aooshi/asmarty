@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using Sharpy.ViewEngine;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.BlockFunctions
+namespace ASmarty.BlockFunctions
 {
     [Export(typeof(IBlockFunction))]
     internal class Literal : IBlockFunction

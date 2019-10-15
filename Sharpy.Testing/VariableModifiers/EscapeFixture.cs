@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 using Rhino.Mocks;
-using Sharpy.VariableModifiers;
-using Sharpy.ViewEngine;
+using ASmarty.VariableModifiers;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.Testing.VariableModifiers
+namespace ASmarty.Testing.VariableModifiers
 {
     [TestFixture]
     public class EscapeFixture

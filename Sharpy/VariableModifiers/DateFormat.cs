@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel.Composition;
-using Sharpy.ViewEngine;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.VariableModifiers
+namespace ASmarty.VariableModifiers
 {
     [Export(typeof(IVariableModifier))]
     public class DateFormat : IVariableModifier

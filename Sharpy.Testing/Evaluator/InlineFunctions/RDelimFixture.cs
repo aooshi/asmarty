@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Sharpy.Testing.Evaluator.InlineFunctions
+namespace ASmarty.Testing.Evaluator.InlineFunctions
 {
     public class RDelimFixture : EvaluatorFixture
     {

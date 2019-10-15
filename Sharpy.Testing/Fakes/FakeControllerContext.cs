@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.SessionState;
 
-namespace Sharpy.Testing.Fakes
+namespace ASmarty.Testing.Fakes
 {
     public class FakeControllerContext : ControllerContext
     {

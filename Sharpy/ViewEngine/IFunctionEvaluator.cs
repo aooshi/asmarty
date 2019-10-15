@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Sharpy.ViewEngine
+namespace ASmarty.ViewEngine
 {
     public interface IFunctionEvaluator : IEvaluator
     {

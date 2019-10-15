@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Text.RegularExpressions;
-using Sharpy.ViewEngine;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.ExpressionFunctions
+namespace ASmarty.ExpressionFunctions
 {
     [Export(typeof(IExpressionFunction))]
     internal class If : IExpressionFunction

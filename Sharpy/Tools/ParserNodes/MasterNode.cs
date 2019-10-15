@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Sharpy.Tools.ParserNodes
+namespace ASmarty.Tools.ParserNodes
 {
     internal class MasterNode : IParserNode
     {

@@ -8,11 +8,11 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Sharpy.Tools;
-using Sharpy.Extensions;
-using Sharpy.Tools.ParserNodes;
+using ASmarty.Tools;
+using ASmarty.Extensions;
+using ASmarty.Tools.ParserNodes;
 
-namespace Sharpy.ViewEngine
+namespace ASmarty.ViewEngine
 {
     internal class InternalEvaluator
     {
@@ -22,11 +22,11 @@ namespace Sharpy.ViewEngine
 
         private readonly RequestContext requestContext;
         private readonly HttpContextBase httpContext;
-        private readonly SharpyFunctions functions;
+        private readonly ASmartyFunctions functions;
         private readonly UrlHelper urlHelper;
         private readonly IDictionary<int, IDictionary<string, object>> functionData;
 
-        internal InternalEvaluator(RequestContext requestContext, HttpContextBase httpContext, IDictionary<string, object> viewData, object model, SharpyFunctions functions)
+        internal InternalEvaluator(RequestContext requestContext, HttpContextBase httpContext, IDictionary<string, object> viewData, object model, ASmartyFunctions functions)
         {
             this.requestContext = requestContext;
             this.httpContext = httpContext;

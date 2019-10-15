@@ -8,8 +8,8 @@
     <ProjectGuid>{3EC1AAFF-BFB0-4F50-AAA9-CD85AE0A6C14}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sharpy</RootNamespace>
-    <AssemblyName>Sharpy</AssemblyName>
+    <RootNamespace>ASmarty</RootNamespace>
+    <AssemblyName>ASmarty</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>

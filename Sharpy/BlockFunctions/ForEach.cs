@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Text;
 using System.Text.RegularExpressions;
-using Sharpy.ViewEngine;
-using Sharpy.Extensions;
+using ASmarty.ViewEngine;
+using ASmarty.Extensions;
 
-namespace Sharpy.BlockFunctions
+namespace ASmarty.BlockFunctions
 {
     [Export(typeof(IBlockFunction))]
     internal class ForEach : IBlockFunction

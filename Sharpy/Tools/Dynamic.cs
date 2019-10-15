@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Threading;
 
-namespace Sharpy.Tools
+namespace ASmarty.Tools
 {
     public static class DynamicQueryable
     {

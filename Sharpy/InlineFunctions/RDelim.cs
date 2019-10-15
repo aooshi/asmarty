@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using Sharpy.ViewEngine;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.InlineFunctions
+namespace ASmarty.InlineFunctions
 {
     [Export(typeof(IInlineFunction))]
     public class RDelim : IInlineFunction

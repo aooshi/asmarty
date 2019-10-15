@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using Sharpy.ViewEngine.Exceptions;
+using ASmarty.ViewEngine.Exceptions;
 
-namespace Sharpy.Testing.Evaluator.VariableModifiers
+namespace ASmarty.Testing.Evaluator.VariableModifiers
 {
     public class RegexReplaceFixture : EvaluatorFixture
     {

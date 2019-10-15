@@ -1,7 +1,7 @@
 ﻿//using System.Web.Mvc;
 //using System.Web.SessionState;
 
-//namespace Sharpy.Testing.Fakes
+//namespace ASmarty.Testing.Fakes
 //{
 //    public class FakeViewContext : ViewContext
 //    {

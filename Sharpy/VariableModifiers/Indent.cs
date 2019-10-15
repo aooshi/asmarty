@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Text;
-using Sharpy.ViewEngine;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.VariableModifiers
+namespace ASmarty.VariableModifiers
 {
     [Export(typeof(IVariableModifier))]
     public class Indent : IVariableModifier

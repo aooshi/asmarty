@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using Sharpy.ViewEngine;
-using Sharpy.Extensions;
+using ASmarty.ViewEngine;
+using ASmarty.Extensions;
 
-namespace Sharpy.InlineFunctions
+namespace ASmarty.InlineFunctions
 {
     [Export(typeof(IInlineFunction))]
     public class Include : IInlineFunction

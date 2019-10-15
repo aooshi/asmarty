@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 using Rhino.Mocks;
-using Sharpy.InlineFunctions;
-using Sharpy.ViewEngine;
+using ASmarty.InlineFunctions;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.Testing.InlineFunctions
+namespace ASmarty.Testing.InlineFunctions
 {
     [TestFixture]
     public class IncludeFixture

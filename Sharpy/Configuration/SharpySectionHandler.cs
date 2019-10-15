@@ -1,8 +1,8 @@
 ﻿using System.Configuration;
 
-namespace Sharpy.Configuration
+namespace ASmarty.Configuration
 {
-    public class SharpySectionHandler : ConfigurationSection
+    public class ASmartySectionHandler : ConfigurationSection
     {
         [ConfigurationProperty("plugins")]
         public PluginsElement Plugins

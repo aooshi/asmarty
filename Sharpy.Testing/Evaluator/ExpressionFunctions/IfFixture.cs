@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Sharpy.Testing.Evaluator.ExpressionFunctions
+namespace ASmarty.Testing.Evaluator.ExpressionFunctions
 {
     public class IfFixture : EvaluatorFixture
     {

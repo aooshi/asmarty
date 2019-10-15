@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using Sharpy.ViewEngine;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.Extensions
+namespace ASmarty.Extensions
 {
     internal static class StringExtensions
     {

@@ -1,4 +1,4 @@
-﻿namespace Sharpy.Tools
+﻿namespace ASmarty.Tools
 {
     internal enum TokenType
     {

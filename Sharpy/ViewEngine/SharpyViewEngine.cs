@@ -6,27 +6,27 @@ using System.Configuration;
 using System.IO;
 using System.Reflection;
 using System.Web.Mvc;
-using Sharpy.Configuration;
+using ASmarty.Configuration;
 
-namespace Sharpy.ViewEngine
+namespace ASmarty.ViewEngine
 {
-    public class SharpyViewEngine : VirtualPathProviderViewEngine
+    public class ASmartyViewEngine : VirtualPathProviderViewEngine
     {
         [ImportMany(typeof(IBlockFunction))] private IEnumerable<IBlockFunction> ImportedBlockFunctions { get; set; }
         [ImportMany(typeof(IInlineFunction))] private IEnumerable<IInlineFunction> ImportedInlineFunctions { get; set; }
         [ImportMany(typeof(IExpressionFunction))] private IEnumerable<IExpressionFunction> ImportedExpressionFunctions { get; set; }
         [ImportMany(typeof(IVariableModifier))] private IEnumerable<IVariableModifier> ImportedVariableModifiers { get; set; }
 
-        private readonly SharpyFunctions functions;
-        private readonly SharpySectionHandler settings;
+        private readonly ASmartyFunctions functions;
+        private readonly ASmartySectionHandler settings;
 
-        public SharpyViewEngine()
+        public ASmartyViewEngine()
         {
-            settings = (SharpySectionHandler) ConfigurationManager.GetSection("sharpy") ?? new SharpySectionHandler();
+            settings = (ASmartySectionHandler) ConfigurationManager.GetSection("ASmarty") ?? new ASmartySectionHandler();
 
-            ViewLocationFormats = new[] { "~/Views/{1}/{0}.sharpy" };
-            PartialViewLocationFormats = new[] { "~/Views/{1}/{0}.sharpy" };
-            MasterLocationFormats = new[] { "~/Views/Shared/{0}.sharpy" };
+            ViewLocationFormats = new[] { "~/Views/{1}/{0}.ASmarty" };
+            PartialViewLocationFormats = new[] { "~/Views/{1}/{0}.ASmarty" };
+            MasterLocationFormats = new[] { "~/Views/Shared/{0}.ASmarty" };
 
             var assemblyCatalog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
             var catalog = new AggregateCatalog(assemblyCatalog);
@@ -37,17 +37,17 @@ namespace Sharpy.ViewEngine
             }
 
             new CompositionContainer(catalog).ComposeParts(this);
-            functions = new SharpyFunctions(ImportedBlockFunctions, ImportedInlineFunctions, ImportedExpressionFunctions, ImportedVariableModifiers);
+            functions = new ASmartyFunctions(ImportedBlockFunctions, ImportedInlineFunctions, ImportedExpressionFunctions, ImportedVariableModifiers);
         }
 
         protected override IView CreatePartialView(ControllerContext controllerContext, string partialPath)
         {
-            return new SharpyView(partialPath, null, functions, false);
+            return new ASmartyView(partialPath, null, functions, false);
         }
 
         protected override IView CreateView(ControllerContext controllerContext, string viewPath, string masterPath)
         {
-            return new SharpyView(viewPath, masterPath, functions, settings.Caching[viewPath] != null);
+            return new ASmartyView(viewPath, masterPath, functions, settings.Caching[viewPath] != null);
         }
     }
 }

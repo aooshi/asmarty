@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Sharpy.Testing.Evaluator
+namespace ASmarty.Testing.Evaluator
 {
     public class VariableEvaluationFixture : EvaluatorFixture
     {

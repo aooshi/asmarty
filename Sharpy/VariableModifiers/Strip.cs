@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.Composition;
 using System.Text.RegularExpressions;
-using Sharpy.ViewEngine;
+using ASmarty.ViewEngine;
 
-namespace Sharpy.VariableModifiers
+namespace ASmarty.VariableModifiers
 {
     [Export(typeof(IVariableModifier))]
     public class Strip : IVariableModifier
