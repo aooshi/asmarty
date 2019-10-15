@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASmarty", "Sharpy\ASmarty.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASmarty.Testing", "Sharpy.Testing\ASmarty.Testing.csproj", "{F48ABCA7-9031-4FF8-A3A6-4DA7B81D008E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASmarty-Core", "ASmarty-Core\ASmarty-Core.csproj", "{C59D2096-04AF-483E-B7E1-8817DC635F50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F48ABCA7-9031-4FF8-A3A6-4DA7B81D008E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F48ABCA7-9031-4FF8-A3A6-4DA7B81D008E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F48ABCA7-9031-4FF8-A3A6-4DA7B81D008E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C59D2096-04AF-483E-B7E1-8817DC635F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C59D2096-04AF-483E-B7E1-8817DC635F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C59D2096-04AF-483E-B7E1-8817DC635F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C59D2096-04AF-483E-B7E1-8817DC635F50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

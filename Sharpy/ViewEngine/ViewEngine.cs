@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
-using System.Configuration;
 using System.IO;
 using System.Reflection;
-using System.Web.Mvc;
-using ASmarty.Configuration;
 
 namespace ASmarty.ViewEngine
 {
-    public class ViewEngine : VirtualPathProviderViewEngine
+    public class ViewEngine
     {
         [ImportMany(typeof(IBlockFunction))] private IEnumerable<IBlockFunction> ImportedBlockFunctions { get; set; }
         [ImportMany(typeof(IInlineFunction))] private IEnumerable<IInlineFunction> ImportedInlineFunctions { get; set; }
@@ -18,21 +15,33 @@ namespace ASmarty.ViewEngine
         [ImportMany(typeof(IVariableModifier))] private IEnumerable<IVariableModifier> ImportedVariableModifiers { get; set; }
 
         private readonly Functions functions;
-        private readonly SectionHandler settings;
-
-        public ViewEngine()
+        
+        public ViewConfiguration ViewConfiguration
         {
-            settings = (SectionHandler) ConfigurationManager.GetSection("ASmarty") ?? new SectionHandler();
+            get;
+            private set;
+        }
 
-            ViewLocationFormats = new[] { "~/Views/{1}/{0}.ASmarty" };
-            PartialViewLocationFormats = new[] { "~/Views/{1}/{0}.ASmarty" };
-            MasterLocationFormats = new[] { "~/Views/Shared/{0}.ASmarty" };
+        public ViewContext Context
+        {
+            get;
+            private set;
+        }
+
+        public ViewEngine(ViewConfiguration viewConfiguration)
+        {
+            //ViewLocationFormats = new[] { "~/Views/{1}/{0}.tpl" };
+            //PartialViewLocationFormats = new[] { "~/Views/{1}/{0}.tpl" };
+            //MasterLocationFormats = new[] { "~/Views/Shared/{0}.tpl" };
+
+            this.ViewConfiguration = viewConfiguration;
+            this.Context = new ViewContext(viewConfiguration);
 
             var assemblyCatalog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
             var catalog = new AggregateCatalog(assemblyCatalog);
-            if (!string.IsNullOrEmpty(settings.Plugins.Folder))
+            if (!string.IsNullOrEmpty(viewConfiguration.PluginFolder))
             {
-                var directoryCatalog = new DirectoryCatalog(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, settings.Plugins.Folder));
+                var directoryCatalog = new DirectoryCatalog(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, viewConfiguration.PluginFolder));
                 catalog.Catalogs.Add(directoryCatalog);
             }
 
@@ -40,14 +49,14 @@ namespace ASmarty.ViewEngine
             functions = new Functions(ImportedBlockFunctions, ImportedInlineFunctions, ImportedExpressionFunctions, ImportedVariableModifiers);
         }
 
-        protected override IView CreatePartialView(ControllerContext controllerContext, string partialPath)
+        public IView CreatePartialView(string partialPath)
         {
             return new View(partialPath, null, functions, false);
         }
 
-        protected override IView CreateView(ControllerContext controllerContext, string viewPath, string masterPath)
+        public IView CreateView(string viewPath, string masterPath)
         {
-            return new View(viewPath, masterPath, functions, settings.Caching[viewPath] != null);
+            return new View(viewPath, masterPath, functions, this.ViewConfiguration.Caching);
         }
     }
 }

@@ -10,13 +10,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ASmarty</RootNamespace>
     <AssemblyName>ASmarty</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,40 +42,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\libs\System.ComponentModel.Composition.dll</HintPath>
     </Reference>
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Abstractions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 2\Assemblies\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Routing">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlockFunctions\Capture.cs" />
     <Compile Include="BlockFunctions\ForEach.cs" />
     <Compile Include="BlockFunctions\Strip.cs" />
-    <Compile Include="Configuration\CachingElement.cs" />
-    <Compile Include="Configuration\PluginsElement.cs" />
-    <Compile Include="Configuration\SectionHandler.cs" />
-    <Compile Include="Configuration\ViewElement.cs" />
     <Compile Include="Extensions\AttributeExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="InlineFunctions\Assign.cs" />
@@ -133,7 +106,11 @@
     <Compile Include="ViewEngine\INamedExport.cs" />
     <Compile Include="ViewEngine\IVariableModifier.cs" />
     <Compile Include="ViewEngine\Functions.cs" />
+    <Compile Include="ViewEngine\IView.cs" />
     <Compile Include="ViewEngine\View.cs" />
+    <Compile Include="ViewEngine\ViewConfiguration.cs" />
+    <Compile Include="ViewEngine\AccessContext.cs" />
+    <Compile Include="ViewEngine\ViewContext.cs" />
     <Compile Include="ViewEngine\ViewEngine.cs" />
     <Compile Include="ViewEngine\InternalEvaluator.cs" />
     <Compile Include="ViewEngine\IEvaluator.cs" />

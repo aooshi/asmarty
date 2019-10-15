@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web.Mvc;
 using ASmarty.Extensions;
 using ASmarty.Tools;
 using ASmarty.Tools.ParserNodes;
@@ -25,11 +24,11 @@ namespace ASmarty.ViewEngine
             this.cache = cache;
         }
 
-        public void Render(ViewContext viewContext, TextWriter writer)
+        public void Render(ViewContext viewContext,AccessContext accessContext, TextWriter writer)
         {
             var nodes = GetNodes(viewContext, viewPath);
 
-            var evaluator = new InternalEvaluator(viewContext.RequestContext, viewContext.HttpContext, viewContext.ViewData, viewContext.ViewData.Model, functions);
+            var evaluator = new InternalEvaluator(viewContext,accessContext, functions);
             var masterNode = nodes.First() as MasterNode;
             if (!string.IsNullOrEmpty(masterPath))
             {
@@ -75,7 +74,7 @@ namespace ASmarty.ViewEngine
             }
         }
 
-        private IEnumerable<IParserNode> GetNodes(ControllerContext controllerContext, string path)
+        private IEnumerable<IParserNode> GetNodes(ViewContext viewContext, string path)
         {
             IEnumerable<IParserNode> nodes;
             if (cache && cachedViews.ContainsKey(path))
@@ -84,7 +83,7 @@ namespace ASmarty.ViewEngine
             }
             else
             {
-                using (var stream = new StreamReader(controllerContext.HttpContext.Server.MapPath(path)))
+                using (var stream = new StreamReader(viewContext.MapPath(path)))
                 {
                     var tokenizer = new Tokenizer(stream);
                     var parser = new Parser(1, tokenizer, functions);

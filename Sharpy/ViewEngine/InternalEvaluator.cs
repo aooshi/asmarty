@@ -6,11 +6,10 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
 using ASmarty.Tools;
 using ASmarty.Extensions;
 using ASmarty.Tools.ParserNodes;
+using DynamicExpression = ASmarty.Tools.DynamicExpression;
 
 namespace ASmarty.ViewEngine
 {
@@ -20,27 +19,21 @@ namespace ASmarty.ViewEngine
         internal IDictionary<string, object> LocalData { get; private set; }
         internal object Model { get; private set; }
 
-        private readonly RequestContext requestContext;
-        private readonly HttpContextBase httpContext;
+        private readonly ViewContext viewContext;
+        private readonly AccessContext accessContext;
         private readonly Functions functions;
-        private readonly UrlHelper urlHelper;
         private readonly IDictionary<int, IDictionary<string, object>> functionData;
 
-        internal InternalEvaluator(RequestContext requestContext, HttpContextBase httpContext, IDictionary<string, object> viewData, object model, Functions functions)
+        internal InternalEvaluator(ViewContext viewContext, AccessContext accessContext, Functions functions)
         {
-            this.requestContext = requestContext;
-            this.httpContext = httpContext;
+            this.viewContext = viewContext;
+            this.accessContext = accessContext;
             this.functions = functions;
 
-            ViewData = viewData;
+            ViewData = accessContext.ViewData;
             LocalData = new Dictionary<string, object>();
-            Model = model;
+            Model = accessContext.ViewModel;
             functionData = new Dictionary<int, IDictionary<string, object>>();
-
-            if (requestContext != null)
-            {
-                urlHelper = new UrlHelper(requestContext);                
-            }
         }        
 
         private IDictionary<string, object> GetFunctionData(int nodeId)
@@ -81,7 +74,7 @@ namespace ASmarty.ViewEngine
 
         internal string EvaluateUrl(string contentPath)
         {
-            return urlHelper.Content(contentPath);
+            return this.viewContext.ContentUrl(contentPath);
         }
 
         internal string EvaluateTemplate(int nodeId, string templatePath)
@@ -102,7 +95,7 @@ namespace ASmarty.ViewEngine
         internal string EvaluateTemplate(int nodeId, string templatePath, object model, IDictionary<string, object> viewData)
         {
             IEnumerable<IParserNode> nodes;
-            using (var stream = new StreamReader(httpContext.Server.MapPath(templatePath)))
+            using (var stream = new StreamReader(viewContext.MapPath(templatePath)))
             {
                 var tokenizer = new Tokenizer(stream);
                 var parser = new Parser(nodeId + 1, tokenizer, functions);
@@ -110,7 +103,7 @@ namespace ASmarty.ViewEngine
                 nodes = parser.ParseAll();
             }
 
-            var evaluator = new InternalEvaluator(requestContext, httpContext, viewData, model, functions);
+            var evaluator = new InternalEvaluator(viewContext, accessContext, functions);
             return evaluator.Evaluate(nodes);
         }
 
@@ -192,7 +185,7 @@ namespace ASmarty.ViewEngine
 
         internal string Encode(string content)
         {
-            return HttpUtility.HtmlEncode(content);
+            return this.viewContext.HtmlEncode(content);
         }
 
         private void EvaluateNode(IParserNode node, StringBuilder output)

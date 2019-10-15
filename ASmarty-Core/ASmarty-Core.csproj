@@ -1,0 +1,97 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>ASmarty_Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Sharpy\BlockFunctions\Capture.cs" Link="BlockFunctions\Capture.cs" />
+    <Compile Include="..\Sharpy\BlockFunctions\ForEach.cs" Link="BlockFunctions\ForEach.cs" />
+    <Compile Include="..\Sharpy\BlockFunctions\Literal.cs" Link="BlockFunctions\Literal.cs" />
+    <Compile Include="..\Sharpy\BlockFunctions\Strip.cs" Link="BlockFunctions\Strip.cs" />
+    <Compile Include="..\Sharpy\Configuration\CachingElement.cs" Link="Configuration\CachingElement.cs" />
+    <Compile Include="..\Sharpy\Configuration\PluginsElement.cs" Link="Configuration\PluginsElement.cs" />
+    <Compile Include="..\Sharpy\Configuration\SectionHandler.cs" Link="Configuration\SectionHandler.cs" />
+    <Compile Include="..\Sharpy\Configuration\ViewElement.cs" Link="Configuration\ViewElement.cs" />
+    <Compile Include="..\Sharpy\ExpressionFunctions\If.cs" Link="ExpressionFunctions\If.cs" />
+    <Compile Include="..\Sharpy\Extensions\AttributeExtensions.cs" Link="Extensions\AttributeExtensions.cs" />
+    <Compile Include="..\Sharpy\Extensions\StringExtensions.cs" Link="Extensions\StringExtensions.cs" />
+    <Compile Include="..\Sharpy\InlineFunctions\Assign.cs" Link="InlineFunctions\Assign.cs" />
+    <Compile Include="..\Sharpy\InlineFunctions\Cycle.cs" Link="InlineFunctions\Cycle.cs" />
+    <Compile Include="..\Sharpy\InlineFunctions\Include.cs" Link="InlineFunctions\Include.cs" />
+    <Compile Include="..\Sharpy\InlineFunctions\LDelim.cs" Link="InlineFunctions\LDelim.cs" />
+    <Compile Include="..\Sharpy\InlineFunctions\RDelim.cs" Link="InlineFunctions\RDelim.cs" />
+    <Compile Include="..\Sharpy\Tools\Dynamic.cs" Link="Tools\Dynamic.cs" />
+    <Compile Include="..\Sharpy\Tools\Parser.cs" Link="Tools\Parser.cs" />
+    <Compile Include="..\Sharpy\Tools\ParserNodes\BlockFunctionNode.cs" Link="Tools\ParserNodes\BlockFunctionNode.cs" />
+    <Compile Include="..\Sharpy\Tools\ParserNodes\CommentNode.cs" Link="Tools\ParserNodes\CommentNode.cs" />
+    <Compile Include="..\Sharpy\Tools\ParserNodes\ExpressionFunctionNode.cs" Link="Tools\ParserNodes\ExpressionFunctionNode.cs" />
+    <Compile Include="..\Sharpy\Tools\ParserNodes\ExpressionNode.cs" Link="Tools\ParserNodes\ExpressionNode.cs" />
+    <Compile Include="..\Sharpy\Tools\ParserNodes\HtmlNode.cs" Link="Tools\ParserNodes\HtmlNode.cs" />
+    <Compile Include="..\Sharpy\Tools\ParserNodes\InlineFunctionNode.cs" Link="Tools\ParserNodes\InlineFunctionNode.cs" />
+    <Compile Include="..\Sharpy\Tools\ParserNodes\IParserNode.cs" Link="Tools\ParserNodes\IParserNode.cs" />
+    <Compile Include="..\Sharpy\Tools\ParserNodes\MasterNode.cs" Link="Tools\ParserNodes\MasterNode.cs" />
+    <Compile Include="..\Sharpy\Tools\Token.cs" Link="Tools\Token.cs" />
+    <Compile Include="..\Sharpy\Tools\Tokenizer.cs" Link="Tools\Tokenizer.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Capitalize.cs" Link="VariableModifiers\Capitalize.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Cat.cs" Link="VariableModifiers\Cat.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\CountCharacters.cs" Link="VariableModifiers\CountCharacters.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\CountParagraphs.cs" Link="VariableModifiers\CountParagraphs.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\CountSentences.cs" Link="VariableModifiers\CountSentences.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\CountWords.cs" Link="VariableModifiers\CountWords.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\DateFormat.cs" Link="VariableModifiers\DateFormat.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Default.cs" Link="VariableModifiers\Default.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Escape.cs" Link="VariableModifiers\Escape.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Indent.cs" Link="VariableModifiers\Indent.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Lower.cs" Link="VariableModifiers\Lower.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\NewLineToBreak.cs" Link="VariableModifiers\NewLineToBreak.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\RegexReplace.cs" Link="VariableModifiers\RegexReplace.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Replace.cs" Link="VariableModifiers\Replace.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Spacify.cs" Link="VariableModifiers\Spacify.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\StringFormat.cs" Link="VariableModifiers\StringFormat.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Strip.cs" Link="VariableModifiers\Strip.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\StripTags.cs" Link="VariableModifiers\StripTags.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Truncate.cs" Link="VariableModifiers\Truncate.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\Upper.cs" Link="VariableModifiers\Upper.cs" />
+    <Compile Include="..\Sharpy\VariableModifiers\WordWrap.cs" Link="VariableModifiers\WordWrap.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\Evaluator.cs" Link="ViewEngine\Evaluator.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\Exceptions\ParsingException.cs" Link="ViewEngine\Exceptions\ParsingException.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\Exceptions\RequiredAttributeException.cs" Link="ViewEngine\Exceptions\RequiredAttributeException.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\Exceptions\RequiredParameterException.cs" Link="ViewEngine\Exceptions\RequiredParameterException.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\Exceptions\TokenizerException.cs" Link="ViewEngine\Exceptions\TokenizerException.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\ExpressionPart.cs" Link="ViewEngine\ExpressionPart.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\FunctionEvaluator.cs" Link="ViewEngine\FunctionEvaluator.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\Functions.cs" Link="ViewEngine\Functions.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\IBlockFunction.cs" Link="ViewEngine\IBlockFunction.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\IEvaluator.cs" Link="ViewEngine\IEvaluator.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\IExpressionFunction.cs" Link="ViewEngine\IExpressionFunction.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\IFunctionEvaluator.cs" Link="ViewEngine\IFunctionEvaluator.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\IFunctionWithContent.cs" Link="ViewEngine\IFunctionWithContent.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\IInlineFunction.cs" Link="ViewEngine\IInlineFunction.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\INamedExport.cs" Link="ViewEngine\INamedExport.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\InternalEvaluator.cs" Link="ViewEngine\InternalEvaluator.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\IVariableModifier.cs" Link="ViewEngine\IVariableModifier.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\View.cs" Link="ViewEngine\View.cs" />
+    <Compile Include="..\Sharpy\ViewEngine\ViewEngine.cs" Link="ViewEngine\ViewEngine.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Tools\ParserNodes\" />
+    <Folder Include="ViewEngine\Exceptions\" />
+    <Folder Include="VariableModifiers\" />
+    <Folder Include="InlineFunctions\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="ExpressionFunctions\" />
+    <Folder Include="Configuration\" />
+    <Folder Include="BlockFunctions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Composition" Version="4.6.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.6.0" />
+  </ItemGroup>
+
+</Project>
