@@ -15,7 +15,7 @@ namespace ASmarty.Testing.Tools
         {
             const string input = "{'bla bla \"bla\"'}";
 
-            var functions = new ASmartyFunctions(new List<IBlockFunction>(), new List<IInlineFunction>(), new List<IExpressionFunction>(), new List<IVariableModifier>());
+            var functions = new Functions(new List<IBlockFunction>(), new List<IInlineFunction>(), new List<IExpressionFunction>(), new List<IVariableModifier>());
 
             ExpressionNode node;
             using (var stringReader = new StringReader(input))
@@ -34,7 +34,7 @@ namespace ASmarty.Testing.Tools
         {
             const string input = "{'bla bla \\'bla\\''}";
 
-            var functions = new ASmartyFunctions(new List<IBlockFunction>(), new List<IInlineFunction>(), new List<IExpressionFunction>(), new List<IVariableModifier>());
+            var functions = new Functions(new List<IBlockFunction>(), new List<IInlineFunction>(), new List<IExpressionFunction>(), new List<IVariableModifier>());
 
             ExpressionNode node;
             using (var stringReader = new StringReader(input))

@@ -25,7 +25,7 @@ namespace ASmarty.Testing.Evaluator
             var inlineFunctions = new IInlineFunction[] { new LDelim(), new RDelim(), new Assign(), new Cycle() };
             var expressionFunctions = new IExpressionFunction[] { new If() };
             var variableModifiers = new IVariableModifier[] { new Capitalize(), new Cat(), new CountCharacters(), new CountParagraphs(), new CountSentences(), new CountWords(), new DateFormat(), new Default(), new Lower(), new NewLineToBreak(), new RegexReplace(), new Replace(), new Spacify(), new StringFormat(), new ASmarty.VariableModifiers.Strip(), new StripTags(), new Truncate(), new Upper(), new WordWrap(), new Indent() };
-            var functions = new ASmartyFunctions(blockFunctions, inlineFunctions, expressionFunctions, variableModifiers);
+            var functions = new Functions(blockFunctions, inlineFunctions, expressionFunctions, variableModifiers);
 
             viewData = new Dictionary<string, object>();
             functionData = new Dictionary<string, object>();
