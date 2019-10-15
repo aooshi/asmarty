@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASmarty.Testing", "Sharpy.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASmarty-Core", "ASmarty-Core\ASmarty-Core.csproj", "{C59D2096-04AF-483E-B7E1-8817DC635F50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "TestApplication\TestApplication.csproj", "{5B5D7BD4-6395-466B-994F-894B92C85A48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{9510B7D7-1DB3-4DA1-93FA-1C15DAEF895A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{C59D2096-04AF-483E-B7E1-8817DC635F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C59D2096-04AF-483E-B7E1-8817DC635F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C59D2096-04AF-483E-B7E1-8817DC635F50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B5D7BD4-6395-466B-994F-894B92C85A48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B5D7BD4-6395-466B-994F-894B92C85A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B5D7BD4-6395-466B-994F-894B92C85A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B5D7BD4-6395-466B-994F-894B92C85A48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9510B7D7-1DB3-4DA1-93FA-1C15DAEF895A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9510B7D7-1DB3-4DA1-93FA-1C15DAEF895A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9510B7D7-1DB3-4DA1-93FA-1C15DAEF895A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9510B7D7-1DB3-4DA1-93FA-1C15DAEF895A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
