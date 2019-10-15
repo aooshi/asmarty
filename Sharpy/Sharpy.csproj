@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3EC1AAFF-BFB0-4F50-AAA9-CD85AE0A6C14}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sharpy</RootNamespace>
+    <AssemblyName>Sharpy</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition, Version=2009.22.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlockFunctions\Capture.cs" />
+    <Compile Include="BlockFunctions\ForEach.cs" />
+    <Compile Include="BlockFunctions\Strip.cs" />
+    <Compile Include="Configuration\CachingElement.cs" />
+    <Compile Include="Configuration\PluginsElement.cs" />
+    <Compile Include="Configuration\SharpySectionHandler.cs" />
+    <Compile Include="Configuration\ViewElement.cs" />
+    <Compile Include="Extensions\AttributeExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="InlineFunctions\Assign.cs" />
+    <Compile Include="InlineFunctions\Cycle.cs" />
+    <Compile Include="Tools\Parser.cs" />
+    <Compile Include="Tools\ParserNodes\BlockFunctionNode.cs" />
+    <Compile Include="Tools\ParserNodes\CommentNode.cs" />
+    <Compile Include="Tools\ParserNodes\ExpressionFunctionNode.cs" />
+    <Compile Include="Tools\ParserNodes\ExpressionNode.cs" />
+    <Compile Include="Tools\ParserNodes\HtmlNode.cs" />
+    <Compile Include="Tools\ParserNodes\InlineFunctionNode.cs" />
+    <Compile Include="Tools\ParserNodes\IParserNode.cs" />
+    <Compile Include="Tools\ParserNodes\MasterNode.cs" />
+    <Compile Include="Tools\Token.cs" />
+    <Compile Include="Tools\Tokenizer.cs" />
+    <Compile Include="VariableModifiers\Indent.cs" />
+    <Compile Include="VariableModifiers\Upper.cs" />
+    <Compile Include="VariableModifiers\WordWrap.cs" />
+    <Compile Include="ViewEngine\Evaluator.cs" />
+    <Compile Include="ViewEngine\Exceptions\ParsingException.cs" />
+    <Compile Include="ViewEngine\Exceptions\TokenizerException.cs" />
+    <Compile Include="VariableModifiers\Replace.cs" />
+    <Compile Include="VariableModifiers\Spacify.cs" />
+    <Compile Include="VariableModifiers\StringFormat.cs" />
+    <Compile Include="VariableModifiers\Strip.cs" />
+    <Compile Include="VariableModifiers\StripTags.cs" />
+    <Compile Include="VariableModifiers\Truncate.cs" />
+    <Compile Include="ViewEngine\Exceptions\RequiredAttributeException.cs" />
+    <Compile Include="InlineFunctions\Include.cs" />
+    <Compile Include="InlineFunctions\LDelim.cs" />
+    <Compile Include="InlineFunctions\RDelim.cs" />
+    <Compile Include="Tools\Dynamic.cs" />
+    <Compile Include="VariableModifiers\Capitalize.cs" />
+    <Compile Include="VariableModifiers\Cat.cs" />
+    <Compile Include="VariableModifiers\CountCharacters.cs" />
+    <Compile Include="VariableModifiers\CountParagraphs.cs" />
+    <Compile Include="VariableModifiers\CountSentences.cs" />
+    <Compile Include="VariableModifiers\CountWords.cs" />
+    <Compile Include="VariableModifiers\DateFormat.cs" />
+    <Compile Include="VariableModifiers\Default.cs" />
+    <Compile Include="VariableModifiers\Escape.cs" />
+    <Compile Include="VariableModifiers\Lower.cs" />
+    <Compile Include="VariableModifiers\NewLineToBreak.cs" />
+    <Compile Include="VariableModifiers\RegexReplace.cs" />
+    <Compile Include="ViewEngine\Exceptions\RequiredParameterException.cs" />
+    <Compile Include="ViewEngine\ExpressionPart.cs" />
+    <Compile Include="ViewEngine\FunctionEvaluator.cs" />
+    <Compile Include="ViewEngine\IBlockFunction.cs" />
+    <Compile Include="ExpressionFunctions\If.cs" />
+    <Compile Include="BlockFunctions\Literal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewEngine\IExpressionFunction.cs" />
+    <Compile Include="ViewEngine\IFunctionEvaluator.cs" />
+    <Compile Include="ViewEngine\IFunctionWithContent.cs" />
+    <Compile Include="ViewEngine\IInlineFunction.cs" />
+    <Compile Include="ViewEngine\INamedExport.cs" />
+    <Compile Include="ViewEngine\IVariableModifier.cs" />
+    <Compile Include="ViewEngine\SharpyFunctions.cs" />
+    <Compile Include="ViewEngine\SharpyView.cs" />
+    <Compile Include="ViewEngine\SharpyViewEngine.cs" />
+    <Compile Include="ViewEngine\InternalEvaluator.cs" />
+    <Compile Include="ViewEngine\IEvaluator.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F48ABCA7-9031-4FF8-A3A6-4DA7B81D008E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sharpy.Testing</RootNamespace>
+    <AssemblyName>Sharpy.Testing</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.4.3.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Evaluator\BlockFunctions\CaptureFixture.cs" />
+    <Compile Include="Evaluator\CommentsFixture.cs" />
+    <Compile Include="Evaluator\ExpressionFunctions\IfFixture.cs" />
+    <Compile Include="Evaluator\BlockFunctions\StripFixture.cs" />
+    <Compile Include="Evaluator\EvaluatorFixture.cs" />
+    <Compile Include="Evaluator\BlockFunctions\ForEachFixture.cs" />
+    <Compile Include="Evaluator\BlockFunctions\LiteralFixture.cs" />
+    <Compile Include="Evaluator\InlineFunctions\AssignFixture.cs" />
+    <Compile Include="Evaluator\InlineFunctions\CycleFixture.cs" />
+    <Compile Include="Evaluator\InlineFunctions\LDelimFixture.cs" />
+    <Compile Include="Evaluator\InlineFunctions\RDelimFixture.cs" />
+    <Compile Include="Evaluator\VariableEvaluationFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\CapitalizeFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\CatFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\CombiningModifiersFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\CountCharactersFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\CountParagraphsFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\CountSentencesFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\CountWordsFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\DateFormatFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\DefaultFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\IndentFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\LowerFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\NewLineToBreakFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\RegexReplaceFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\ReplaceFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\SpacifyFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\StringFormatFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\StripFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\StripTagsFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\TruncateFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\UpperFixture.cs" />
+    <Compile Include="Evaluator\VariableModifiers\WordWrapFixture.cs" />
+    <Compile Include="Extensions\StringExtensionsParseExpressionFixture.cs" />
+    <Compile Include="Fakes\FakeController.cs" />
+    <Compile Include="Fakes\FakeControllerContext.cs" />
+    <Compile Include="Fakes\FakeHtmlHelper.cs" />
+    <Compile Include="Fakes\FakeHttpContext.cs" />
+    <Compile Include="Fakes\FakeHttpRequest.cs" />
+    <Compile Include="Fakes\FakeHttpResponse.cs" />
+    <Compile Include="Fakes\FakeHttpSessionState.cs" />
+    <Compile Include="Fakes\FakeIdentity.cs" />
+    <Compile Include="Fakes\FakePrincipal.cs" />
+    <Compile Include="Fakes\FakeView.cs" />
+    <Compile Include="Fakes\FakeViewContext.cs" />
+    <Compile Include="Fakes\FakeViewDataContainer.cs" />
+    <Compile Include="InlineFunctions\IncludeFixture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\ParserFixture.cs" />
+    <Compile Include="Tools\ParserQuoteEscapeFixture.cs" />
+    <Compile Include="Tools\TokenizerFixture.cs" />
+    <Compile Include="VariableModifiers\EscapeFixture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sharpy\Sharpy.csproj">
+      <Project>{3EC1AAFF-BFB0-4F50-AAA9-CD85AE0A6C14}</Project>
+      <Name>Sharpy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
