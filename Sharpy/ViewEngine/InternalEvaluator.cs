@@ -22,11 +22,11 @@ namespace ASmarty.ViewEngine
 
         private readonly RequestContext requestContext;
         private readonly HttpContextBase httpContext;
-        private readonly ASmartyFunctions functions;
+        private readonly Functions functions;
         private readonly UrlHelper urlHelper;
         private readonly IDictionary<int, IDictionary<string, object>> functionData;
 
-        internal InternalEvaluator(RequestContext requestContext, HttpContextBase httpContext, IDictionary<string, object> viewData, object model, ASmartyFunctions functions)
+        internal InternalEvaluator(RequestContext requestContext, HttpContextBase httpContext, IDictionary<string, object> viewData, object model, Functions functions)
         {
             this.requestContext = requestContext;
             this.httpContext = httpContext;

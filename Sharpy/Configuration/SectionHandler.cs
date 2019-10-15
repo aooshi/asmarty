@@ -2,7 +2,7 @@
 
 namespace ASmarty.Configuration
 {
-    public class ASmartySectionHandler : ConfigurationSection
+    public class SectionHandler : ConfigurationSection
     {
         [ConfigurationProperty("plugins")]
         public PluginsElement Plugins

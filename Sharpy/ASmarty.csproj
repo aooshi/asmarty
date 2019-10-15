@@ -73,7 +73,7 @@
     <Compile Include="BlockFunctions\Strip.cs" />
     <Compile Include="Configuration\CachingElement.cs" />
     <Compile Include="Configuration\PluginsElement.cs" />
-    <Compile Include="Configuration\SharpySectionHandler.cs" />
+    <Compile Include="Configuration\SectionHandler.cs" />
     <Compile Include="Configuration\ViewElement.cs" />
     <Compile Include="Extensions\AttributeExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
@@ -132,9 +132,9 @@
     <Compile Include="ViewEngine\IInlineFunction.cs" />
     <Compile Include="ViewEngine\INamedExport.cs" />
     <Compile Include="ViewEngine\IVariableModifier.cs" />
-    <Compile Include="ViewEngine\SharpyFunctions.cs" />
-    <Compile Include="ViewEngine\SharpyView.cs" />
-    <Compile Include="ViewEngine\SharpyViewEngine.cs" />
+    <Compile Include="ViewEngine\Functions.cs" />
+    <Compile Include="ViewEngine\View.cs" />
+    <Compile Include="ViewEngine\ViewEngine.cs" />
     <Compile Include="ViewEngine\InternalEvaluator.cs" />
     <Compile Include="ViewEngine\IEvaluator.cs" />
   </ItemGroup>

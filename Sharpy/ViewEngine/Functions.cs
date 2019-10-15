@@ -2,14 +2,14 @@
 
 namespace ASmarty.ViewEngine
 {
-    internal class ASmartyFunctions
+    internal class Functions
     {
         internal IDictionary<string, IBlockFunction> BlockFunctions { get; private set; }
         internal IDictionary<string, IInlineFunction> InlineFunctions { get; private set; }
         internal IDictionary<string, IExpressionFunction> ExpressionFunctions { get; private set; }
         internal IDictionary<string, IVariableModifier> VariableModifiers { get; private set; }
 
-        public ASmartyFunctions(IEnumerable<IBlockFunction> blockFunctions, IEnumerable<IInlineFunction> inlineFunctions, IEnumerable<IExpressionFunction> expressionFunctions, IEnumerable<IVariableModifier> variableModifiers)
+        public Functions(IEnumerable<IBlockFunction> blockFunctions, IEnumerable<IInlineFunction> inlineFunctions, IEnumerable<IExpressionFunction> expressionFunctions, IEnumerable<IVariableModifier> variableModifiers)
         {
             BlockFunctions = CreateDictionary(blockFunctions);
             InlineFunctions = CreateDictionary(inlineFunctions);

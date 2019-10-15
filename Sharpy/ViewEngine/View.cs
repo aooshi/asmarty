@@ -8,16 +8,16 @@ using ASmarty.Tools.ParserNodes;
 
 namespace ASmarty.ViewEngine
 {
-    internal class ASmartyView : IView
+    internal class View : IView
     {
         private static readonly IDictionary<string, IEnumerable<IParserNode>> cachedViews = new Dictionary<string, IEnumerable<IParserNode>>();
 
         private readonly string viewPath;
         private readonly string masterPath;
-        private readonly ASmartyFunctions functions;
+        private readonly Functions functions;
         private readonly bool cache;
 
-        public ASmartyView(string viewPath, string masterPath, ASmartyFunctions functions, bool cache)
+        public View(string viewPath, string masterPath, Functions functions, bool cache)
         {
             this.viewPath = viewPath;
             this.masterPath = masterPath;

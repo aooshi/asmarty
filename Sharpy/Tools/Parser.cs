@@ -10,11 +10,11 @@ namespace ASmarty.Tools
     {
         private int currentNodeId;
         private readonly Tokenizer tokenizer;
-        private readonly ASmartyFunctions functions;
+        private readonly Functions functions;
         private Token currentToken;
         private const string master = "master";
 
-        public Parser(int currentNodeId, Tokenizer tokenizer, ASmartyFunctions functions)
+        public Parser(int currentNodeId, Tokenizer tokenizer, Functions functions)
         {
             this.currentNodeId = currentNodeId;
             this.tokenizer = tokenizer;
