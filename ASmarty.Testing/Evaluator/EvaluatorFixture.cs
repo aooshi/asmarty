@@ -30,7 +30,7 @@ namespace ASmarty.Testing.Evaluator
             viewData = new Dictionary<string, object>();
             functionData = new Dictionary<string, object>();
 
-            var internalEvaluator = new InternalEvaluator(null, null, viewData, null, functions);
+            var internalEvaluator = new InternalEvaluator(null, null, functions);
             evaluator = new ViewEngine.Evaluator(internalEvaluator, 0);
             functionEvaluator = new FunctionEvaluator(internalEvaluator, 0, functionData);
         }
