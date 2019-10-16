@@ -1,6 +1,7 @@
 ﻿using Adf;
 using ASmarty.ViewEngine;
 using System;
+using System.IO;
 using System.Net;
 
 namespace TestApplication
@@ -20,7 +21,7 @@ namespace TestApplication
             vc.ApplicationPath = "/";
             vc.Caching = true;
             //vc.PluginFolder = "";
-            vc.ViewRootPath = System.IO.Path.Combine(AppContext.BaseDirectory, "Views/");
+            vc.ViewRootPath = System.IO.Path.Combine(AppContext.BaseDirectory, "../../../Views/");
             vc.ViewExtension = ".tpl";
 
             //
@@ -30,11 +31,21 @@ namespace TestApplication
             Adf.HttpServer server = new Adf.HttpServer(8082);
             server.Callback = HttpServerCallback;
             server.Start();
+
+            Console.WriteLine("ok");
+            Console.ReadLine();
         }
 
         private static HttpStatusCode HttpServerCallback(HttpServerContext context)
         {
-            context.Content = "23";
+            var view = ViewEngine.CreateView("Guestbook/Index.tpl", "Shared/Master.tpl");
+
+            using (StringWriter sw = new StringWriter())
+            {
+                view.Render(ViewEngine.Context, ViewEngine.CreateAccessContext(null), sw);
+
+                context.Content = sw.ToString();
+            }
 
             return HttpStatusCode.OK;
         }

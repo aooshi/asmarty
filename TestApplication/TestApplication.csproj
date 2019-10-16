@@ -2,15 +2,17 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Adf5" Version="5.0.0" />
+    <ProjectReference Include="..\ASmarty\ASmarty.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sharpy\ASmarty.csproj" />
+    <Reference Include="Adf">
+      <HintPath>C:\develop\bin\adf5\5.0.x\netstandard2.0\Adf.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

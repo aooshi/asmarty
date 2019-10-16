@@ -58,5 +58,10 @@ namespace ASmarty.ViewEngine
         {
             return new View(viewPath, masterPath, functions, this.ViewConfiguration.Caching);
         }
+
+        public AccessContext CreateAccessContext(object viewModel)
+        {
+            return new AccessContext(viewModel);
+        }
     }
 }
