@@ -42,7 +42,9 @@ namespace TestApplication
 
             using (StringWriter sw = new StringWriter())
             {
-                view.Render(ViewEngine.Context, ViewEngine.CreateAccessContext(null), sw);
+                var viewContext = new ViewContext(ViewEngine);
+
+                view.Render(viewContext, ViewEngine.CreateAccessContext(null), sw);
 
                 context.Content = sw.ToString();
             }
