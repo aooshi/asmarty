@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace ASmarty.ViewEngine
@@ -11,30 +12,36 @@ namespace ASmarty.ViewEngine
             private set;
         }
 
-        public IDictionary<string, object> ViewData
+        public ViewEngine ViewEngine
         {
             get;
             private set;
         }
 
-        internal ViewContext(ViewConfiguration configuration)
+        public IDictionary ViewData
         {
-            this.Configuration = configuration;
-            this.ViewData = new Dictionary<string, object>();
+            get;
+            protected set;
         }
 
+        public ViewContext(ViewEngine viewEngine)
+        {
+            this.ViewEngine = viewEngine;
+            this.Configuration = ViewEngine.ViewConfiguration;
+            this.ViewData = new Hashtable();
+        }
 
-        public string MapPath(String path)
+        public virtual string MapPath(String path)
         {
             return System.IO.Path.Combine(this.Configuration.ViewRootPath, path);
         }
 
-        public string ContentUrl(String path)
+        public virtual string ContentUrl(String path)
         {
             return string.Concat(this.Configuration.WwwrootPath, path);
         }
 
-        public string HtmlEncode(String content)
+        public virtual string HtmlEncode(String content)
         {
             //return HttpUtility.HtmlEncode(content);
             return System.Net.WebUtility.HtmlEncode(content);

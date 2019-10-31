@@ -22,12 +22,6 @@ namespace ASmarty.ViewEngine
             private set;
         }
 
-        public ViewContext Context
-        {
-            get;
-            private set;
-        }
-
         public ViewEngine(ViewConfiguration viewConfiguration)
         {
             //ViewLocationFormats = new[] { "~/Views/{1}/{0}.tpl" };
@@ -35,7 +29,6 @@ namespace ASmarty.ViewEngine
             //MasterLocationFormats = new[] { "~/Views/Shared/{0}.tpl" };
 
             this.ViewConfiguration = viewConfiguration;
-            this.Context = new ViewContext(viewConfiguration);
 
             var assemblyCatalog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
             var catalog = new AggregateCatalog(assemblyCatalog);
