@@ -31,7 +31,7 @@ namespace ASmarty.ViewEngine
 
         public string ContentUrl(String path)
         {
-            return string.Concat(this.Configuration.ApplicationPath, path);
+            return string.Concat(this.Configuration.WwwrootPath, path);
         }
 
         public string HtmlEncode(String content)

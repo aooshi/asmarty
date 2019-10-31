@@ -18,7 +18,7 @@ namespace TestApplication
         {
             ViewConfiguration vc = new ViewConfiguration();
 
-            vc.ApplicationPath = "/";
+            vc.WwwrootPath = "/";
             vc.Caching = true;
             //vc.PluginFolder = "";
             vc.ViewRootPath = System.IO.Path.Combine(AppContext.BaseDirectory, "../../../Views/");

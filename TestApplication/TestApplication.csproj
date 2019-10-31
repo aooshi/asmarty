@@ -6,13 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ASmarty\ASmarty.csproj" />
+    <PackageReference Include="Aooshi.Adf" Version="4.6.17" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Adf">
-      <HintPath>C:\develop\bin\adf5\5.0.x\netstandard2.0\Adf.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\ASmarty\ASmarty.csproj" />
   </ItemGroup>
 
 </Project>
