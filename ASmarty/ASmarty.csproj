@@ -4,6 +4,19 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>ASmarty</RootNamespace>
     <AssemblyName>ASmarty</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Aooshi.org</Authors>
+    <PackageProjectUrl>http://www.aooshi.org/link?n=asmarty</PackageProjectUrl>
+    <PackageIconUrl>https://www.aooshi.com/aooshi64.png</PackageIconUrl>
+    <PackageLicenseUrl>https://opensource.org/licenses/MS-PL</PackageLicenseUrl>
+    <Copyright>Copyright Aooshi.org © 2019</Copyright>
+    <PackageReleaseNotes>Aooshi .Net Framework v5, hhttp://www.aooshi.org/link?n=asmarty</PackageReleaseNotes>
+    <Description>Aooshi .Net Framework v5, hhttp://www.aooshi.org/link?n=asmarty</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>C:\develop\bin\asmarty\1.0.x\</OutputPath>
+    <DocumentationFile>C:\develop\bin\asmarty\1.0.x\netstandard2.0\ASmarty.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
