@@ -55,7 +55,7 @@ namespace ASmarty.ViewEngine
 
         public IView CreatePartialView(string partialPath)
         {
-            var partialFile = partialPath + this.ViewConfiguration.ViewExtension;
+            var partialFile = string.IsNullOrEmpty(partialPath) ? null : (partialPath + this.ViewConfiguration.ViewExtension);
             return new View(partialFile, null, functions, false);
         }
 
@@ -63,7 +63,7 @@ namespace ASmarty.ViewEngine
         {
             var ext = this.ViewConfiguration.ViewExtension;
             var viewFile = viewPath + ext;
-            var masterFile = masterPath + ext;
+            var masterFile = string.IsNullOrEmpty(masterPath) ? null : (masterPath + ext);
             return new View(viewFile, masterFile, functions, this.ViewConfiguration.Caching);
         }
 
