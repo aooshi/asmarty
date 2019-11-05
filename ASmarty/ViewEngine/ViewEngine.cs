@@ -22,15 +22,6 @@ namespace ASmarty.ViewEngine
             private set;
         }
 
-        /// <summary>
-        /// get or set util
-        /// </summary>
-        public IUtil Util
-        {
-            get;
-            set;
-        }
-
         public ViewEngine(ViewConfiguration viewConfiguration)
         {
             //ViewLocationFormats = new[] { "~/Views/{1}/{0}.tpl" };
@@ -49,8 +40,6 @@ namespace ASmarty.ViewEngine
 
             new CompositionContainer(catalog).ComposeParts(this);
             functions = new Functions(ImportedBlockFunctions, ImportedInlineFunctions, ImportedExpressionFunctions, ImportedVariableModifiers);
-
-            this.Util = new Util(viewConfiguration);
         }
 
         public IView CreatePartialView(string partialPath)
@@ -65,11 +54,6 @@ namespace ASmarty.ViewEngine
             var viewFile = viewPath + ext;
             var masterFile = string.IsNullOrEmpty(masterPath) ? null : (masterPath + ext);
             return new View(viewFile, masterFile, functions, this.ViewConfiguration.Caching);
-        }
-
-        public AccessContext CreateAccessContext(object viewModel)
-        {
-            return new AccessContext(viewModel);
         }
     }
 }

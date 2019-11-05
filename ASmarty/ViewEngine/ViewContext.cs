@@ -6,52 +6,68 @@ namespace ASmarty.ViewEngine
 {
     public class ViewContext
     {
+        ViewConfiguration _configuration;
         public ViewConfiguration Configuration
         {
-            get;
-            private set;
+            get { return this._configuration; }
         }
 
+        ViewEngine _viewEngine;
         public ViewEngine ViewEngine
         {
-            get;
-            private set;
+            get { return _viewEngine; }
         }
 
-        public IDictionary ViewData
+        IDictionary<string, object> _viewData;
+        public IDictionary<string, object> ViewData
         {
-            get;
-            private set;
+            get { return _viewData; }
         }
 
-        public IUtil Util
+        object _viewModel;
+        public object ViewModel
         {
-            get;
-            private set;
+            get { return this._viewModel; }
+        }
+
+        public ViewContext(ViewEngine viewEngine, object viewModel, IDictionary<string, object> viewData)
+        {
+            this._viewEngine = viewEngine;
+            this._configuration = viewEngine.ViewConfiguration;
+            this._viewData = viewData;
+            this._viewModel = viewModel;
+        }
+
+        public ViewContext(ViewEngine viewEngine, object viewModel)
+        {
+            this._viewEngine = viewEngine;
+            this._configuration = viewEngine.ViewConfiguration;
+            this._viewData = new Dictionary<string, object>();
+            this._viewModel = viewModel;
         }
 
         public ViewContext(ViewEngine viewEngine)
         {
-            this.ViewEngine = viewEngine;
-            this.Configuration = ViewEngine.ViewConfiguration;
-            this.ViewData = new Hashtable();
-            this.Util = viewEngine.Util;
+            this._viewEngine = viewEngine;
+            this._configuration = viewEngine.ViewConfiguration;
+            this._viewData = new Dictionary<string, object>();
+            this._viewModel = null;
         }
 
-        public string MapPath(String path)
+        public virtual string MapPath(String path)
         {
-            return this.Util.MapPath(path);
+            return System.IO.Path.Combine(this._configuration.ViewFolder, path);
         }
 
-        public string Content(String path)
+        public virtual string HtmlEncode(String content)
         {
-            return this.Util.Content(path);
+            //return HttpUtility.HtmlEncode(content);
+            return System.Net.WebUtility.HtmlEncode(content);
         }
 
-        public string HtmlEncode(String content)
+        public virtual string Content(string path)
         {
-            return this.Util.HtmlEncode(content);
+            return string.Concat(this._configuration.HomePath, path);
         }
-
     }
 }

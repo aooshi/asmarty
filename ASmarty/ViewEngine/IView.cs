@@ -5,6 +5,6 @@ namespace ASmarty.ViewEngine
 {
     public interface IView
     {
-        void Render(ViewContext viewContext, AccessContext accessContext, TextWriter writer);
+        void Render(ViewContext viewContext, TextWriter writer);
     }
 }

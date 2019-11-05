@@ -24,11 +24,11 @@ namespace ASmarty.ViewEngine
             this.cache = cache;
         }
 
-        public void Render(ViewContext viewContext,AccessContext accessContext, TextWriter writer)
+        public void Render(ViewContext viewContext, TextWriter writer)
         {
             var nodes = GetNodes(viewContext, viewPath);
 
-            var evaluator = new InternalEvaluator(viewContext,accessContext, functions);
+            var evaluator = new InternalEvaluator(viewContext, functions);
             var masterNode = nodes.First() as MasterNode;
             if (!string.IsNullOrEmpty(masterPath))
             {

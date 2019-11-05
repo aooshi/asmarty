@@ -15,35 +15,46 @@ namespace ASmarty.ViewEngine
 {
     internal class InternalEvaluator
     {
-        internal IDictionary<string, object> ViewData { get; private set; }
-        internal IDictionary<string, object> LocalData { get; private set; }
+        IDictionary<string, object> _viewData;
+        IDictionary<string, object> _localData;
+
+        internal IDictionary<string, object> ViewData { get { return this._viewData; } }
+        internal IDictionary<string, object> LocalData { get { return this._localData; } }
         internal object Model { get; private set; }
 
         private readonly ViewContext viewContext;
-        private readonly AccessContext accessContext;
         private readonly Functions functions;
         private readonly IDictionary<int, IDictionary<string, object>> functionData;
 
-        internal InternalEvaluator(ViewContext viewContext, AccessContext accessContext, Functions functions)
+        internal InternalEvaluator(ViewContext viewContext, Functions functions)
         {
             this.viewContext = viewContext;
-            this.accessContext = accessContext;
             this.functions = functions;
 
-            ViewData = accessContext.ViewData;
-            LocalData = new Dictionary<string, object>();
-            Model = accessContext.ViewModel;
+            this._viewData = viewContext.ViewData;
+            this._localData = new Dictionary<string, object>();
+            Model = viewContext.ViewModel;
             functionData = new Dictionary<int, IDictionary<string, object>>();
         }
 
         private IDictionary<string, object> GetFunctionData(int nodeId)
         {
-            if (!functionData.ContainsKey(nodeId))
+            //if (!functionData.ContainsKey(nodeId))
+            //{
+            //    functionData.Add(nodeId, new Dictionary<string, object>());
+            //}
+
+            //return functionData[nodeId];
+
+            IDictionary<string, object> dict = null;
+
+            if (functionData.TryGetValue(nodeId, out dict) == false)
             {
-                functionData.Add(nodeId, new Dictionary<string, object>());
+                dict = new Dictionary<string, object>();
+                functionData.Add(nodeId, dict);
             }
 
-            return functionData[nodeId];
+            return dict;
         }
 
         internal string Evaluate(IEnumerable<IParserNode> nodes)
@@ -103,7 +114,7 @@ namespace ASmarty.ViewEngine
                 nodes = parser.ParseAll();
             }
 
-            var evaluator = new InternalEvaluator(viewContext, accessContext, functions);
+            var evaluator = new InternalEvaluator(viewContext, functions);
             return evaluator.Evaluate(nodes);
         }
 
@@ -255,22 +266,38 @@ namespace ASmarty.ViewEngine
         private object GetCurrentVariableValue(string variableName)
         {
             // First look for the variable in the local context
-            if (LocalData.ContainsKey(variableName))
+            //if (LocalData.ContainsKey(variableName))
+            //{
+            //    return LocalData[variableName];
+            //}
+            //else if (ViewData.ContainsKey(variableName))
+            //{
+            //    return ViewData[variableName];
+            //}
+            //else if (variableName == "Model")
+            //{
+            //    return Model;
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+
+            object value = null;
+            if (this._localData.TryGetValue(variableName, out value))
             {
-                return LocalData[variableName];
+                return value;
             }
-            else if (ViewData.ContainsKey(variableName))
+            else if (this._viewData.TryGetValue(variableName, out value))
             {
-                return ViewData[variableName];
+                return value;
             }
             else if (variableName == "Model")
             {
                 return Model;
             }
-            else
-            {
-                return null;
-            }
+
+            return null;
         }
 
         internal IDictionary<string, object> EvaluateAttributes(int nodeId, IEnumerable<KeyValuePair<string, ExpressionNode>> attributes)

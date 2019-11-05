@@ -18,4 +18,8 @@
 			<td colspan="2">No records</td>
 		</tr>
 	{/foreach}
+
+
 </table>
+
+<p>{$uuid}</p>

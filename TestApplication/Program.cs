@@ -18,10 +18,11 @@ namespace TestApplication
         {
             ViewConfiguration vc = new ViewConfiguration();
 
-            vc.WwwrootFolder = "/";
             vc.Caching = true;
             //vc.PluginFolder = "";
+            vc.WwwrootFolder = AppContext.BaseDirectory;
             vc.ViewFolder = System.IO.Path.Combine(AppContext.BaseDirectory, "../../../Views/");
+            vc.HomePath = "/";
             vc.ViewExtension = ".tpl";
 
             //
@@ -38,13 +39,15 @@ namespace TestApplication
 
         private static HttpStatusCode HttpServerCallback(HttpServerContext context)
         {
-            var view = ViewEngine.CreateView("Guestbook/Index.tpl", "Shared/Master.tpl");
+            var view = ViewEngine.CreateView("Guestbook/Index", "Shared/Master");
 
             using (StringWriter sw = new StringWriter())
             {
                 var viewContext = new ViewContext(ViewEngine);
 
-                view.Render(viewContext, ViewEngine.CreateAccessContext(null), sw);
+                viewContext.ViewData["uuid"] = Guid.NewGuid().ToString();
+
+                view.Render(viewContext, sw);
 
                 context.Content = sw.ToString();
             }
