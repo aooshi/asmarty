@@ -21,7 +21,13 @@ namespace ASmarty.ViewEngine
         public IDictionary ViewData
         {
             get;
-            protected set;
+            private set;
+        }
+
+        public IUtil Util
+        {
+            get;
+            private set;
         }
 
         public ViewContext(ViewEngine viewEngine)
@@ -29,22 +35,23 @@ namespace ASmarty.ViewEngine
             this.ViewEngine = viewEngine;
             this.Configuration = ViewEngine.ViewConfiguration;
             this.ViewData = new Hashtable();
+            this.Util = viewEngine.Util;
         }
 
-        public virtual string MapPath(String path)
+        public string MapPath(String path)
         {
-            return System.IO.Path.Combine(this.Configuration.ViewRootPath, path);
+            return this.Util.MapPath(path);
         }
 
-        public virtual string ContentUrl(String path)
+        public string Content(String path)
         {
-            return string.Concat(this.Configuration.WwwrootPath, path);
+            return this.Util.Content(path);
         }
 
-        public virtual string HtmlEncode(String content)
+        public string HtmlEncode(String content)
         {
-            //return HttpUtility.HtmlEncode(content);
-            return System.Net.WebUtility.HtmlEncode(content);
+            return this.Util.HtmlEncode(content);
         }
+
     }
 }

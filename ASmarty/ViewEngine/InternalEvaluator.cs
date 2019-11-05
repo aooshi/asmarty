@@ -34,7 +34,7 @@ namespace ASmarty.ViewEngine
             LocalData = new Dictionary<string, object>();
             Model = accessContext.ViewModel;
             functionData = new Dictionary<int, IDictionary<string, object>>();
-        }        
+        }
 
         private IDictionary<string, object> GetFunctionData(int nodeId)
         {
@@ -74,7 +74,7 @@ namespace ASmarty.ViewEngine
 
         internal string EvaluateUrl(string contentPath)
         {
-            return this.viewContext.ContentUrl(contentPath);
+            return this.viewContext.Content(contentPath);
         }
 
         internal string EvaluateTemplate(int nodeId, string templatePath)
@@ -196,19 +196,19 @@ namespace ASmarty.ViewEngine
             }
             else if (node is ExpressionNode)
             {
-                EvaluateExpressionNode((ExpressionNode) node, output);
+                EvaluateExpressionNode((ExpressionNode)node, output);
             }
             else if (node is InlineFunctionNode)
             {
-                EvaluateInlineFunctionNode((InlineFunctionNode) node, output);
+                EvaluateInlineFunctionNode((InlineFunctionNode)node, output);
             }
             else if (node is BlockFunctionNode)
             {
-                EvaluateBlockFunctionNode((BlockFunctionNode) node, output);
+                EvaluateBlockFunctionNode((BlockFunctionNode)node, output);
             }
             else if (node is ExpressionFunctionNode)
             {
-                EvaluateExpressionFunctionNode((ExpressionFunctionNode) node, output);
+                EvaluateExpressionFunctionNode((ExpressionFunctionNode)node, output);
             }
         }
 
@@ -273,9 +273,9 @@ namespace ASmarty.ViewEngine
             }
         }
 
-        internal IDictionary<string,object> EvaluateAttributes(int nodeId, IEnumerable<KeyValuePair<string, ExpressionNode>> attributes)
+        internal IDictionary<string, object> EvaluateAttributes(int nodeId, IEnumerable<KeyValuePair<string, ExpressionNode>> attributes)
         {
-            var evaluatedAttributes = new Dictionary<string,object>();
+            var evaluatedAttributes = new Dictionary<string, object>();
             if (attributes != null)
             {
                 foreach (var attribute in attributes)
@@ -292,7 +292,7 @@ namespace ASmarty.ViewEngine
             return evaluatedAttributes;
         }
 
-        private static IDictionary<string,string> expressionReplacements = null;
+        private static IDictionary<string, string> expressionReplacements = null;
         private static readonly object expressionReplacementsLock = new object();
 
         private static IDictionary<string, string> ExpressionReplacements

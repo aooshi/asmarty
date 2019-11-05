@@ -18,10 +18,10 @@ namespace TestApplication
         {
             ViewConfiguration vc = new ViewConfiguration();
 
-            vc.WwwrootPath = "/";
+            vc.WwwrootFolder = "/";
             vc.Caching = true;
             //vc.PluginFolder = "";
-            vc.ViewRootPath = System.IO.Path.Combine(AppContext.BaseDirectory, "../../../Views/");
+            vc.ViewFolder = System.IO.Path.Combine(AppContext.BaseDirectory, "../../../Views/");
             vc.ViewExtension = ".tpl";
 
             //
