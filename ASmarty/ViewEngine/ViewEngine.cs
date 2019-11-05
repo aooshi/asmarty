@@ -15,7 +15,7 @@ namespace ASmarty.ViewEngine
         [ImportMany(typeof(IVariableModifier))] private IEnumerable<IVariableModifier> ImportedVariableModifiers { get; set; }
 
         private readonly Functions functions;
-        
+
         public ViewConfiguration ViewConfiguration
         {
             get;
@@ -55,12 +55,16 @@ namespace ASmarty.ViewEngine
 
         public IView CreatePartialView(string partialPath)
         {
-            return new View(partialPath, null, functions, false);
+            var partialFile = partialPath + this.ViewConfiguration.ViewExtension;
+            return new View(partialFile, null, functions, false);
         }
 
         public IView CreateView(string viewPath, string masterPath)
         {
-            return new View(viewPath, masterPath, functions, this.ViewConfiguration.Caching);
+            var ext = this.ViewConfiguration.ViewExtension;
+            var viewFile = viewPath + ext;
+            var masterFile = masterPath + ext;
+            return new View(viewFile, masterFile, functions, this.ViewConfiguration.Caching);
         }
 
         public AccessContext CreateAccessContext(object viewModel)
