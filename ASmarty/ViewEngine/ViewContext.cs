@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace ASmarty.ViewEngine
@@ -56,7 +55,36 @@ namespace ASmarty.ViewEngine
 
         public virtual string MapPath(String path)
         {
-            return System.IO.Path.Combine(this._configuration.ViewFolder, path);
+            if (path == null)
+                return this._configuration.WwwrootFolder;
+
+            if (path == "")
+                return this._configuration.WwwrootFolder;
+
+            if (path[0] == '/')
+                return this._configuration.WwwrootFolder + path.Substring(1);
+
+            if (path[0] == '\\')
+                return this._configuration.WwwrootFolder + path.Substring(1);
+
+            return this._configuration.WwwrootFolder + path;
+        }
+
+        public virtual string MapViewPath(String path)
+        {
+            if (path == null)
+                return this._configuration.ViewFolder;
+
+            if (path == "")
+                return this._configuration.ViewFolder;
+
+            if (path[0] == '/')
+                return this._configuration.ViewFolder + path.Substring(1);
+
+            if (path[0] == '\\')
+                return this._configuration.ViewFolder + path.Substring(1);
+
+            return this._configuration.ViewFolder + path;
         }
 
         public virtual string HtmlEncode(String content)
@@ -67,6 +95,18 @@ namespace ASmarty.ViewEngine
 
         public virtual string Content(string path)
         {
+            if (path == null)
+                return this._configuration.HomePath;
+
+            if (path == "")
+                return this._configuration.HomePath;
+
+            if (path[0] == '/')
+                return this._configuration.HomePath + path.Substring(1);
+
+            if (path[0] == '\\')
+                return this._configuration.HomePath + path.Substring(1);
+
             return string.Concat(this._configuration.HomePath, path);
         }
     }

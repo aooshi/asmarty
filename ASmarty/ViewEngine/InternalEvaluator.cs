@@ -106,7 +106,7 @@ namespace ASmarty.ViewEngine
         internal string EvaluateTemplate(int nodeId, string templatePath, object model, IDictionary<string, object> viewData)
         {
             IEnumerable<IParserNode> nodes;
-            using (var stream = new StreamReader(viewContext.MapPath(templatePath)))
+            using (var stream = new StreamReader(viewContext.MapViewPath(templatePath)))
             {
                 var tokenizer = new Tokenizer(stream);
                 var parser = new Parser(nodeId + 1, tokenizer, functions);

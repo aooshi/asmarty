@@ -83,7 +83,7 @@ namespace ASmarty.ViewEngine
             }
             else
             {
-                using (var stream = new StreamReader(viewContext.MapPath(path)))
+                using (var stream = new StreamReader(viewContext.MapViewPath(path)))
                 {
                     var tokenizer = new Tokenizer(stream);
                     var parser = new Parser(1, tokenizer, functions);
@@ -100,3 +100,4 @@ namespace ASmarty.ViewEngine
         }
     }
 }
+
