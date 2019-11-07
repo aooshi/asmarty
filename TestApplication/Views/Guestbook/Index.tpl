@@ -1,4 +1,4 @@
-﻿{master file="~/Views/Shared/Master.sharpy" title="Guestbook"}
+﻿{master file="/Shared/Master.sharpy" title="Guestbook"}
 {* Smarty *}
 
 <table border="0" bgcolor="#eeeeee" width="300">
@@ -21,5 +21,11 @@
 
 
 </table>
+
+
+<p>Resource: {"/lib/js/app.js"|content}</p>
+<p>DateFormat: {$date|date_format:"yyyy-MM-dd HH:mm:ss"}</p>
+
+{include file="Guestbook/I2.tpl"}
 
 <p>{$uuid}</p>

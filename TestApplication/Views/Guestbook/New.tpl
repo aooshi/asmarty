@@ -1,4 +1,4 @@
-﻿{master file="~/Views/Shared/Master.sharpy" title="Add new entry"}
+﻿{master file="Shared/Master.sharpy" title="Add new entry"}
 {* Smarty *}
 
 <form action="/Guestbook/Add" method="post">
@@ -24,6 +24,8 @@
 	<tr>
 		<td colspan="2" align="center"><input type="submit" value="Submit"></td>
 	</tr>
+
+	{include file="Guestbook/I2.tpl"}
 
 </table>
 </form>

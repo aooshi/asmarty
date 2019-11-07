@@ -29,7 +29,7 @@ namespace TestApplication
             ViewEngine = new ViewEngine(vc);
 
 
-            Adf.HttpServer server = new Adf.HttpServer(8082);
+            Adf.HttpServer server = new Adf.HttpServer(8083);
             server.Callback = HttpServerCallback;
             server.Start();
 
@@ -46,6 +46,7 @@ namespace TestApplication
                 var viewContext = new ViewContext(ViewEngine);
 
                 viewContext.ViewData["uuid"] = Guid.NewGuid().ToString();
+                viewContext.ViewData["date"] = DateTime.Now;
 
                 view.Render(viewContext, sw);
 
