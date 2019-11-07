@@ -76,10 +76,14 @@ namespace ASmarty.ViewEngine
 
         private IEnumerable<IParserNode> GetNodes(ViewContext viewContext, string path)
         {
-            IEnumerable<IParserNode> nodes;
-            if (cache && cachedViews.ContainsKey(path))
+            IEnumerable<IParserNode> nodes = null;
+            //if (cache && cachedViews.ContainsKey(path))
+            //{
+            //    nodes = cachedViews[path];
+            //}
+            if (cache && cachedViews.TryGetValue(path, out nodes))
             {
-                nodes = cachedViews[path];
+                //
             }
             else
             {
