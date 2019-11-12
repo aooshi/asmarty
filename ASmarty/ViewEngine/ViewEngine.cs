@@ -37,7 +37,12 @@ namespace ASmarty.ViewEngine
                 var directoryCatalog = new DirectoryCatalog(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, viewConfiguration.PluginFolder));
                 catalog.Catalogs.Add(directoryCatalog);
             }
-
+            //
+            foreach (var assembly in viewConfiguration.PluginAssemblies)
+            {
+                catalog.Catalogs.Add(new AssemblyCatalog(assembly));
+            }
+            //
             new CompositionContainer(catalog).ComposeParts(this);
             functions = new Functions(ImportedBlockFunctions, ImportedInlineFunctions, ImportedExpressionFunctions, ImportedVariableModifiers);
         }

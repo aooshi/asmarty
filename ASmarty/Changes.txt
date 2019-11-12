@@ -1,0 +1,4 @@
+1.6.0
+	Add:	1.6.0, tag value
+	Add:	1.6.0, tag call
+	Add:	1.6.0, ViewConfiguration.PluginAssemblies

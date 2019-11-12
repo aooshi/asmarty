@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace ASmarty.ViewEngine
 {
@@ -28,5 +30,14 @@ namespace ASmarty.ViewEngine
         /// caching enable / disable
         /// </summary>
         public bool Caching { get; set; }
+        /// <summary>
+        /// get plugin assemblies
+        /// </summary>
+        public IList<Assembly> PluginAssemblies { get; private set; }
+
+        public ViewConfiguration()
+        {
+            this.PluginAssemblies = new List<Assembly>(8);
+        }
     }
 }
