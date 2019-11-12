@@ -42,6 +42,10 @@
 <p>Call Test T1: {$t1}</p>
 
 <p>&nbsp;</p>
-<p>{'dict'|value:'uuid'}</p>
-<p>{'dict'|value:'uuid':'args1':'args2'}</p>
+<p>{$vars['var1']}</p>
+<p>{$vars['var2']}</p>
+<p>{$vars['var3']}</p>
 <p>&nbsp;</p>
+<p>{$obj1.field1}</p>
+<p>{$obj1.field2}</p>
+<p>{$obj2}</p>

@@ -25,6 +25,7 @@ namespace TestApplication
             vc.ViewFolder = System.IO.Path.Combine(AppContext.BaseDirectory, "../../../Views/");
             vc.HomePath = "/";
             vc.ViewExtension = ".tpl";
+            vc.Caching = false;
 
             //plugin register
             vc.PluginAssemblies.Add(typeof(Program).Assembly);
@@ -46,8 +47,16 @@ namespace TestApplication
             if (context.Path.Equals("/favicon.ico"))
                 return HttpStatusCode.NotFound;
 
-            var data1 = new Hashtable();
-            data1.Add("uuid", Guid.NewGuid().ToString());
+            var vars = new Hashtable();
+            vars.Add("var1", Guid.NewGuid().ToString());
+            vars.Add("var2", Guid.NewGuid().ToString());
+            vars.Add("var3", Guid.NewGuid().ToString());
+
+            var obj1 = new {
+                field1 = Guid.NewGuid().ToString(),
+                field2 = Guid.NewGuid().ToString(),
+                field3 = Guid.NewGuid().ToString()
+            };
 
             var view = ViewEngine.CreateView("Guestbook/Index", "Shared/Master");
             using (StringWriter sw = new StringWriter())
@@ -57,7 +66,8 @@ namespace TestApplication
                 viewContext.ViewData["uuid"] = Guid.NewGuid().ToString();
                 viewContext.ViewData["date"] = DateTime.Now;
 
-                viewContext.ViewData["dict"] = data1;
+                viewContext.ViewData["vars"] = vars;
+                viewContext.ViewData["obj1"] = obj1;
 
                 viewContext.ViewData["t1"] = Guid.NewGuid().ToString();
                 viewContext.ViewData["CallTest"] = new CallTest(viewContext);
