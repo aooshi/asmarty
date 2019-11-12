@@ -24,17 +24,18 @@ namespace ASmarty.ViewEngine
 
         public ViewEngine(ViewConfiguration viewConfiguration)
         {
-            //ViewLocationFormats = new[] { "~/Views/{1}/{0}.tpl" };
-            //PartialViewLocationFormats = new[] { "~/Views/{1}/{0}.tpl" };
-            //MasterLocationFormats = new[] { "~/Views/Shared/{0}.tpl" };
-
             this.ViewConfiguration = viewConfiguration;
 
             var assemblyCatalog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
             var catalog = new AggregateCatalog(assemblyCatalog);
             if (!string.IsNullOrEmpty(viewConfiguration.PluginFolder))
             {
-                var directoryCatalog = new DirectoryCatalog(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, viewConfiguration.PluginFolder));
+                if (System.IO.Directory.Exists(viewConfiguration.PluginFolder) == false)
+                {
+                    throw new DirectoryNotFoundException("PluginFolder Not found");
+                }
+                //var directoryCatalog = new DirectoryCatalog(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, viewConfiguration.PluginFolder));
+                var directoryCatalog = new DirectoryCatalog(viewConfiguration.PluginFolder);
                 catalog.Catalogs.Add(directoryCatalog);
             }
             //
