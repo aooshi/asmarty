@@ -23,9 +23,25 @@
 </table>
 
 
+
+<p>CustomFun: {'customfun ok'|customfun}</p>
+
+
+
 <p>Resource: {"/lib/js/app.js"|content}</p>
 <p>DateFormat: {$date|date_format:"yyyy-MM-dd HH:mm:ss"}</p>
 
 {include file="Guestbook/I2.tpl"}
 
 <p>{$uuid}</p>
+
+
+
+<p>Call Test T1: {$t1}</p>
+{call object="CallTest" function="Test" param1=$uuid}
+<p>Call Test T1: {$t1}</p>
+
+<p>&nbsp;</p>
+<p>{'dict'|value:'uuid'}</p>
+<p>{'dict'|value:'uuid':'args1':'args2'}</p>
+<p>&nbsp;</p>
