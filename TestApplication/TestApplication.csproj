@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aooshi.Adf" Version="4.6.17" />
+    <PackageReference Include="Adf.HttpServer" Version="1.2.0" />
+    <PackageReference Include="Adf5" Version="5.5.0" />
   </ItemGroup>
 
   <ItemGroup>
