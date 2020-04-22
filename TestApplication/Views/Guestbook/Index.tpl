@@ -38,7 +38,7 @@
 
 
 <p>Call Test T1: {$t1}</p>
-{call object="CallTest" function="Test" param1=$uuid}
+<p>{call object="CallTest" function="Test" param1=$uuid}</p>
 <p>Call Test T1: {$t1}</p>
 
 <p>&nbsp;</p>
